@@ -1,0 +1,40 @@
+{
+  "name": "@dnclive/envconf",
+  "version": "0.0.0",
+  "description": "Environment configuration for node",
+  "main": "build/index.js",
+  "exports": {
+    "import": "./build/index.mjs",
+    "require": "./build/index.cjs",
+    "default": "./build/index.js"
+  },
+  "browser": "build/index.js",
+  "imports": {
+    "#selfmod/*": "./src/*"
+  },
+  "scripts": {
+    "esbuild": "node src/esbuilder.mjs",
+    "test": "node tests/index.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dnclive/node-envconf.git"
+  },
+  "keywords": [
+    "Environment",
+    "configuration"
+  ],
+  "author": "Vladimir Zhlobentsev <vladimir.zhlobentsev@gmail.com> (https://github.com/dnclive)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dnclive/node-envconf/issues"
+  },
+  "homepage": "https://github.com/dnclive/node-envconf#readme",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.9"
+  }
+}
