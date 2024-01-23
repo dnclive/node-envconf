@@ -3,7 +3,9 @@
  * @module @dnclive/envconf
  */
 
-import confVars from '#selfmod/conf.mjs'
+import confVars, {isInitialized} from '#selfmod/conf.mjs'
+
+//console.log('index.mjs', confVars, isInitialized)
 
 const fConf = typeof window !== 'undefined'?
   async () => {
@@ -16,7 +18,8 @@ const fConf = typeof window !== 'undefined'?
     return globalThis.__APP_CONF__
   }
 
-export const conf = typeof window !== 'undefined'? await fConf(): confVars
+const conf = typeof window !== 'undefined'? await fConf(): confVars
+export {conf, isInitialized}
 export default (vars={}) => Object.assign(conf, vars)
 
 /*

@@ -11,14 +11,14 @@ await build({
   minify: !isDev,
   sourcemap: isDev,
   outfile: 'build/index.mjs',
-  platform: 'browser',
+  platform: 'node',
   format: 'esm',
   packages: 'external',
   logLevel: 'info'
 })
 
 // browser CommonJS
-await build({
+/*await build({
   entryPoints: ['src/index.cjs'],
   bundle: true,
   minify: !isDev,
@@ -28,7 +28,7 @@ await build({
   format: 'cjs',
   packages: 'external',
   logLevel: 'info'
-})
+})*/
 
 // web worker, etc...
 /*

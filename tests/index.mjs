@@ -1,10 +1,10 @@
 
 //import {test, expect} from  "@jest/globals"
 
-import Conf from "#selfmod/index.mjs"
-import {conf} from "#selfmod/index.mjs"
+import Conf, {conf, isInitialized} from "#selfmod/index.mjs"
+//import  from "#selfmod/index.mjs"
 
-console.log('Conf', Conf, conf)
+console.log('Conf', Conf, conf, isInitialized)
 
 const conf2 = Conf({
   var1: 'val1',

@@ -31,11 +31,15 @@ globalThis.__APP_CONF_REQ_PROMISES__??=[]
         if (!globalThis.__APP_CONF__.isInitialized) {
             globalThis.__APP_CONF__.isInitialized = true
 
-            Promise.all([
-                import("path"),
-                import("fs"),
-                import("dotenv")
-            ]).then(([path, fs, dotenv]) => {
+            const path = await import("path")
+            const fs = await import("fs")
+            const dotenv = await import("dotenv")
+
+            // Promise.all([
+            //     import("path"),
+            //     import("fs"),
+            //     import("dotenv")
+            // ]).then(([path, fs, dotenv]) => {
                 /*const dotenv = require('dotenv')
             const fs = require('fs')
             const path = require('node:path')*/
@@ -95,6 +99,8 @@ globalThis.__APP_CONF_REQ_PROMISES__??=[]
 
                 const nodeEnv = process.env.NODE_ENV && process.env.NODE_ENV !== '' ? process.env.NODE_ENV :
                   globalThis.__APP_CONF__.NODE_ENV ? globalThis.__APP_CONF__.NODE_ENV : 'production'
+
+                //console.log('nodeEnv', process.env.NODE_ENV, globalThis.__APP_CONF__.NODE_ENV, nodeEnv)
 
                 //log (10, "process.env.NODE_ENV", process.env.NODE_ENV, nodeEnv)
 
@@ -201,7 +207,7 @@ globalThis.__APP_CONF_REQ_PROMISES__??=[]
 
                 console.info('APP.CONF')
                 console.info(globalThis.__APP_CONF__)
-            })
+            // })
         }
     } else if (!globalThis.__APP_CONF_IS_LOADED__ && !globalThis.__APP_CONF_IS_LOADING__) {
         globalThis.__APP_CONF_IS_LOADING__ = true
@@ -238,5 +244,8 @@ globalThis.__APP_CONF_REQ_PROMISES__??=[]
     //return globalThis.__APP_CONF__
 //}
 
+export const isInitialized = globalThis.__APP_CONF__.isInitialized
 export default globalThis.__APP_CONF__
+
+//console.log("conf.mjs", globalThis.__APP_CONF__)
 

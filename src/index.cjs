@@ -3,7 +3,7 @@
  * @module @dnclive/envconf
  */
 
-import confVars from '#selfmod/conf.mjs'
+import confVars, {isInitialized} from '#selfmod/conf.mjs'
 
 const fConf = typeof window !== 'undefined'?
   async () => {
@@ -17,6 +17,7 @@ const fConf = typeof window !== 'undefined'?
   }
 
 export const conf = typeof window !== 'undefined'? fConf(): confVars
+export {isInitialized}
 export default typeof window !== 'undefined'?
   async (vars={}) => Object.assign(await conf, vars):
   (vars={}) => Object.assign(conf, vars)
