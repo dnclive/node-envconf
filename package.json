@@ -12,9 +12,18 @@
   "imports": {
     "#selfmod/*": "./src/*"
   },
+  "directories": {
+    "build": "./build"
+  },
   "scripts": {
     "esbuild": "node src/esbuilder.mjs",
-    "test": "node tests/index.mjs"
+    "test": "node tests/index.mjs",
+    "bump_prepatch": "sh/bump_ver_3.sh prepatch",
+    "bump_patch": "sh/bump_ver_3.sh patch",
+    "bump_preminor": "sh/bump_ver_3.sh preminor",
+    "bump_minor": "sh/bump_ver_3.sh minor",
+    "bump_premajor": "sh/bump_ver_3.sh premajor",
+    "bump_major": "sh/bump_ver_3.sh major"
   },
   "repository": {
     "type": "git",
