@@ -1,6 +1,6 @@
 {
   "name": "@dnclive/envconf",
-  "version": "0.0.1-0",
+  "version": "0.0.1-1",
   "description": "Environment configuration for node",
   "main": "build/index.js",
   "exports": {
