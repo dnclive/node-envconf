@@ -1,6 +1,6 @@
 {
   "name": "@dnclive/envconf",
-  "version": "0.0.1-1",
+  "version": "0.0.2",
   "description": "Environment configuration for node",
   "main": "build/index.js",
   "exports": {
@@ -39,6 +39,10 @@
     "url": "https://github.com/dnclive/node-envconf/issues"
   },
   "homepage": "https://github.com/dnclive/node-envconf#readme",
+  "engines": {
+    "node": ">=16.0.0 <22.0.0",
+    "npm": ">=9.0.0 <11.0.0"
+  },
   "dependencies": {
     "axios": "^1.6.2",
     "dotenv": "^16.3.1"
