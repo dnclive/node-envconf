@@ -1,0 +1,8 @@
+node_modules/
+src/
+tests/
+sh/
+.idea
+.gitignore
+jsconfig.json
+*.tgz

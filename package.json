@@ -1,6 +1,6 @@
 {
   "name": "@dnclive/envconf",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "Environment configuration for node",
   "main": "build/index.js",
   "exports": {
@@ -12,9 +12,18 @@
   "imports": {
     "#selfmod/*": "./src/*"
   },
+  "directories": {
+    "build": "./build"
+  },
   "scripts": {
     "esbuild": "node src/esbuilder.mjs",
-    "test": "node tests/index.mjs"
+    "test": "node tests/index.mjs",
+    "bump_prepatch": "sh/bump_ver_3.sh prepatch",
+    "bump_patch": "sh/bump_ver_3.sh patch",
+    "bump_preminor": "sh/bump_ver_3.sh preminor",
+    "bump_minor": "sh/bump_ver_3.sh minor",
+    "bump_premajor": "sh/bump_ver_3.sh premajor",
+    "bump_major": "sh/bump_ver_3.sh major"
   },
   "repository": {
     "type": "git",
@@ -30,6 +39,10 @@
     "url": "https://github.com/dnclive/node-envconf/issues"
   },
   "homepage": "https://github.com/dnclive/node-envconf#readme",
+  "engines": {
+    "node": ">=16.0.0 <22.0.0",
+    "npm": ">=9.0.0 <11.0.0"
+  },
   "dependencies": {
     "axios": "^1.6.2",
     "dotenv": "^16.3.1"
